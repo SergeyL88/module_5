@@ -17,22 +17,28 @@ class House():
         return self.number_of_floors
     
     def __eq__(self, other) -> bool:
-        return self.number_of_floors == other
+        if isinstance(other, House) or isinstance(other, int):
+            return self.number_of_floors == other.number_of_floors
      
     def __lt__(self, other: object) -> bool:
-        return self.number_of_floors < other.number_of_floors
+        if isinstance(other, House) or isinstance(other, int):
+            return self.number_of_floors < other.number_of_floors
     
     def __le__(self, other: object) -> bool:
-        return self.number_of_floors <= other.number_of_floors
+        if isinstance(other, House) or isinstance(other, int):
+            return self.number_of_floors <= other.number_of_floors
         
     def __gt__(self, other: object) -> bool:
-        return self.number_of_floors > other.number_of_floors
+        if isinstance(other, House) or isinstance(other, int):
+            return self.number_of_floors > other.number_of_floors
         
     def __ge__(self, other: object) -> bool:
-        return self.number_of_floors >= other.number_of_floors
+        if isinstance(other, House) or isinstance(other, int):
+            return self.number_of_floors >= other.number_of_floors
         
     def __ne__(self, other: object) -> bool:
-        return self.number_of_floors != other.number_of_floors
+        if isinstance(other, House) or isinstance(other, int):
+            return self.number_of_floors != other.number_of_floors
 
     def __add__(self, value) -> int:
         self.number_of_floors += value
